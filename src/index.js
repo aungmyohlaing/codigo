@@ -3,11 +3,42 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { createMuiTheme } from "@material-ui/core/styles";
+import { ThemeProvider } from "@material-ui/styles";
 
-ReactDOM.render(
-  <React.StrictMode>
+const theme = createMuiTheme({
+  overrides: {
+    MuiCssBaseline: {
+      "@global": {
+        body: {
+          backgroundColor: "white",
+        },
+        html: {
+          scrollBehavior: "smooth",
+        },
+      },
+    },
+  },
+  palette: {    
+    primary: {
+      main: "#d5333e",
+      light: "#ff6969",
+      dark: "#9c0018",
+      textPrimary: "#ffffff",
+    },
+    secondary: {
+      main: '#3a2837',
+      light: '#655161',
+      dark: '#150011',
+      textSecondary: '#ffffff',
+    },
+  },
+});
+
+ReactDOM.render(  
+  <ThemeProvider theme={theme}>
     <App />
-  </React.StrictMode>,
+    </ThemeProvider>,
   document.getElementById('root')
 );
 
