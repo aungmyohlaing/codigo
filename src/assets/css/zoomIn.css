@@ -1,0 +1,13 @@
+.hover-zoom {
+  background-color: silver;
+  transform-origin: 50% 55%;
+  transition: transform 3s, filter 5s ease-in-out;
+  /* filter: brightness(150%); */
+  /* position: relative;  */
+}
+
+.hover-zoom:hover {
+  /* filter: brightness(100%); */
+  transform: scale(1.1);
+  cursor: pointer;
+}
